@@ -1,0 +1,13 @@
+﻿  Parser.cpp
+  ConfigureParser.cpp
+  ActionsAndRules.cpp
+  Utilities.cpp
+  Tokenizer.cpp
+  SemiExp.cpp
+  ScopeStack.cpp
+  Logger.cpp
+  GrammarHelpers.cpp
+  FileSystem.cpp
+  AbstrSynTree.cpp
+  Generating Code...
+  Parser.vcxproj -> D:\p3\CodePublisher\x64\Debug\Parser.lib

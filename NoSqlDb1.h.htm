@@ -1,0 +1,189 @@
+<html>
+<head>
+<script src="javascript.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+ <body><h3>CodePublisher</h3>
+<hr/>
+<div class = "indent">
+<h4>Dependencies:</h4> 
+<pre><br><a href = "CodePublisher.h.htm">CodePublisher.h ==> CodePublisher.h.htm</a><br><br><a href = "DependencyAnalysis.h.htm">DependencyAnalysis.h ==> DependencyAnalysis.h.htm</a><br><br><a href = "NoSqlDb1.h.htm">NoSqlDb1.h ==> NoSqlDb1.h.htm</a><br><br><br><br>#pragma once
+#pragma warning( disable : 4715)
+/////////////////////////////////////////////////////////////////////////////////
+// NoSqlDb.h - Demonstrates how to save data in the database                   //
+// ver 2.0                                                                     //
+// -----------------------------------------------------------------------     //
+// copyright © Triveni Ashok Naik, 2017                                        //
+// Source: Jim Fawcett, CSE687 - Object Oriented Design, Spring 2017           //                                                          //
+// -----------------------------------------------------------------------     //
+// Language:    Visual C++, Visual Studio 2015                                 //
+// Platform:    Lenovo Y40, Core i7, Windows 8.1 SP1                           //
+// Application: Spring Project,CSE 687,2017                                    //
+// Author:      Triveni Ashok Naik, Syracuse University                        //
+//              SUID: 406461644, trnaik@syr.edu                                //
+/////////////////////////////////////////////////////////////////////////////////
+
+/* This package is involved in storing all the contents of the dependency table in the NoSqlDb. 
+This is most important because it is the place where all the contents of the database is being 
+stored and hence there are certain operations that are present here. The certain operations that are present here
+are the showelement , save,laases called as Dependency which plays a very important role in the project later on.
+the save function that is present is involved in saving all the attributes that are present and hence storing it
+safely in the database and hence can retrieve it whenever needed.The show element function is the one that is used
+to to display the contents of the database.
+*/
+
+//Functional Prolougues
+/* showelement() -&gt It is a function that is used to display an element
+   showkeys()    -&gt It is a function that is used to display all the keys that is present
+   value()       -&gt It is a function that is used to display all the value present in the function.
+
+
+Public Interface :
+== == == == == == == == =
+Dependency Class &gt ---- &gt
+
+Build Process :
+== == == == == == ==
+Required files
+- ActionandRules.h
+- CppProperties.h
+Build commands
+- devenv Project2_OOD.sln
+- cl / EHsc / DTEST_TOKENIZER tokenizer.cpp / link setargv.obj
+
+Maintenance History :
+== == == == == == == == == ==
+ver 2.0 : 11 Mar 17
+- second release
+---------------------------- -
+ver 1.0 :
+	-first release
+	------------------------------
+	== == == == == == == == == == */
+
+
+#include &ltunordered_map&gt
+#include &ltstring&gt
+#include &ltsstream&gt
+#include &ltvector&gt
+#include &ltiomanip&gt
+#include &ltiostream&gt
+#include &ltctime&gt
+
+
+using Key = std::string;
+using Keys = std::vector&ltstd::string&gt;
+using File = std::string;
+using Files = std::vector&ltFile&gt;
+using Pattern = std::string;
+using Ext = std::string;
+using FileMap = std::unordered_map&ltPattern, Files&gt;
+//&lt-----------------------------------A class ElementItem which has two most important components---------------------------&gt
+
+class ElementItem
+<button onclick = "myFunc1()"1
+>+</button><div id = "mydiv1">{
+public:
+	std::vector&ltstd::string&gt childrenList;
+	std::string showelement();
+
+}</div><br><script>function myFunc1() {var x = document.getElementById('mydiv1');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>;
+//--------------------------------------Function to show all the elements present here----------------------------------&gt
+
+std::string ElementItem::showelement()
+<button onclick = "myFunc2()"2
+>+</button><div id = "mydiv2">{
+	// show children when you've implemented them
+
+	std::ostringstream out;
+	out.setf(std::ios::adjustfield, std::ios::left);
+
+	out &lt&lt "\n    " &lt&lt std::setw(8) &lt&lt "Children are   " &lt&lt " : ";
+	std::vector&ltstd::string&gt c = childrenList;
+
+	for (Key k : c)
+	<button onclick = "myFunc2()"2
+>+</button><div id = "mydiv2">{
+		out &lt&lt "\t" &lt&lt k;
+	}</div><br><script>function myFunc2() {var x = document.getElementById('mydiv2');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+	out &lt&lt "\n";
+
+	return out.str();
+}</div><br><script>function myFunc3() {var x = document.getElementById('mydiv3');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+//-----------------------------------------------An important Class called as the dependency that is involved in saving all the data------------------------&gt
+
+class Dependency
+<button onclick = "myFunc4()"4
+>+</button><div id = "mydiv4">{
+public:
+	Keys keys();
+	ElementItem value(File key);
+	size_t count();
+	void showKeys(Keys list);
+	inline bool save(File key, ElementItem elem)
+	<button onclick = "myFunc4()"4
+>+</button><div id = "mydiv4">{
+     if (store.find(key) != store.end())
+			return false;
+		store[key] = elem;
+		return true;
+	}</div><br><script>function myFunc4() {var x = document.getElementById('mydiv4');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+	
+private:
+	using Item = std::pair&ltFile, ElementItem&gt;
+	std::unordered_map&ltFile, ElementItem&gt store;
+}</div><br><script>function myFunc5() {var x = document.getElementById('mydiv5');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>;
+
+//&lt------------------------------------------------Returns the keys of the DataBase------------------------------------------&gt
+
+
+std::vector&ltFile&gt Dependency::keys()
+<button onclick = "myFunc6()"6
+>+</button><div id = "mydiv6">{
+	Keys keys;
+	for (Item item : store)
+	<button onclick = "myFunc6()"6
+>+</button><div id = "mydiv6">{
+		keys.push_back(item.first);
+	}</div><br><script>function myFunc6() {var x = document.getElementById('mydiv6');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+	return keys;
+}</div><br><script>function myFunc7() {var x = document.getElementById('mydiv7');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+
+//&lt-------------------------------------------------Returns the ElementItem of a certain key in the Database------------------------------------------&gt
+
+ElementItem Dependency::value(File key)
+<button onclick = "myFunc8()"8
+>+</button><div id = "mydiv8">{
+	if (store.find(key) != store.end())
+		return store[key];
+	//return ElementItem();
+}</div><br><script>function myFunc8() {var x = document.getElementById('mydiv8');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+
+//_-----------------------------------------------------Returns count of the DataBase------------------------------------------------------------&gt
+
+size_t Dependency::count()
+<button onclick = "myFunc9()"9
+>+</button><div id = "mydiv9">{
+	return store.size();
+}</div><br><script>function myFunc9() {var x = document.getElementById('mydiv9');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+
+//---------------------------------------------------------Displays all keys in the Database-------------------------------------------------------&gt
+
+void Dependency::showKeys(Keys list)
+<button onclick = "myFunc10()"10
+>+</button><div id = "mydiv10">{
+	for (Key k : list)
+	<button onclick = "myFunc10()"10
+>+</button><div id = "mydiv10">{
+		std::cout &lt&lt "\t" &lt&lt k &lt&lt "\n";
+	}</div><br><script>function myFunc10() {var x = document.getElementById('mydiv10');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+	return;
+}</div><br><script>function myFunc11() {var x = document.getElementById('mydiv11');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+
+
+
+
+
+</pre>
+</body>
+</html>

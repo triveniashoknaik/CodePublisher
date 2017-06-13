@@ -1,0 +1,24 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Fri May  5 20:59:33 2017
+     Path: "D:\p3\CodePublisher\Requirement-9"
+     Args: *.h, *.cpp, /f, /r
+                                                                               
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+           CodePublisher.h    function                        codepublish      84      82       7
+      DependencyAnalysis.h    function                             taskDo      83      86      14
+
+              public data: NoSqlDb1.h : 77 - class ElementItem
+                std :: vector < std :: string > childrenList ; 
+              public data: Typetable.h : 75 - class TypeAnal
+                typeanalysis db1 ; 
+              public data: Typetable.h : 76 - class TypeAnal
+                std :: priority_queue < std :: string > namespaceQueue ; 
+
+
+    searched     1 dirs
+   processed     8 files

@@ -1,0 +1,32 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Thu Apr  6 20:29:52 2017
+     Path: "C:\Users\TriveniAshok\Desktop\CodePublisher\Parser"
+     Args: *.h, *.cpp, /f, /r, *.h, *.cpp, /f, /r
+                                                                               
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+         ActionsAndRules.h    function                           doAction     657      85       6
+         ActionsAndRules.h    function                             doTest     961      74      10
+         ActionsAndRules.h    function                           doAction     657      85       6
+         ActionsAndRules.h    function                             doTest     961      74      10
+       ConfigureParser.cpp    function                              Build      91     103       3
+       ConfigureParser.cpp    function                              Build      91     103       3
+                Parser.cpp    function                               main      91      55       8
+                Parser.cpp    function                               main      91      55       8
+
+              public data: Parser.h : 109 - class IRule
+                static const bool Continue = true ; 
+              public data: Parser.h : 110 - class IRule
+                static const bool Stop = false ; 
+              public data: Parser.h : 109 - class IRule
+                static const bool Continue = true ; 
+              public data: Parser.h : 110 - class IRule
+                static const bool Stop = false ; 
+
+
+    searched     5 dirs
+   processed    12 files

@@ -1,0 +1,67 @@
+<html>
+<head>
+<script src="javascript.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+ <body><h3>CodePublisher</h3>
+<hr/>
+<div class = "indent">
+<h4>Dependencies:</h4> 
+<pre><br><a href = "CodePublisher.cpp.htm">CodePublisher.cpp ==> CodePublisher.cpp.htm</a><br><br><a href = "CodePublisher.h.htm">CodePublisher.h ==> CodePublisher.h.htm</a><br><br><a href = "DependencyAnalysis.cpp.htm">DependencyAnalysis.cpp ==> DependencyAnalysis.cpp.htm</a><br><br><a href = "DependencyAnalysis.h.htm">DependencyAnalysis.h ==> DependencyAnalysis.h.htm</a><br><br><a href = "NoSqlDb1.cpp.htm">NoSqlDb1.cpp ==> NoSqlDb1.cpp.htm</a><br><br><a href = "NoSqlDb1.h.htm">NoSqlDb1.h ==> NoSqlDb1.h.htm</a><br><br><a href = "Typetable.cpp.htm">Typetable.cpp ==> Typetable.cpp.htm</a><br><br><a href = "Typetable.h.htm">Typetable.h ==> Typetable.h.htm</a><br><br><br><br>/////////////////////////////////////////////////////////////////////////////////
+// DependencyAnalysis.cpp - Demonstrate how to start developing dependency analyzer       //
+//                                                                             //
+// ver 2.0                                                                     //
+// -----------------------------------------------------------------------     //
+// copyright © Triveni Ashok Naik, 2017                                        //
+// Source: Jim Fawcett, CSE687 - Object Oriented Design, Spring 2017           //
+// -----------------------------------------------------------------------     //
+// Language:    Visual C++, Visual Studio 2015                                 //
+// Platform:    Lenovo Y40, Core i7, Windows 8.1 SP1                           //
+// Application: Spring Project,CSE 687,2017                                    //
+// Author:      Triveni Ashok Naik, Syracuse University                        //
+//              SUID: 406461644, trnaik@syr.edu                                //
+///////////////////////////////////////////////////////////////////////////////
+
+#include &ltunordered_map&gt
+#include &ltstring&gt
+#include &ltsstream&gt
+#include &ltvector&gt
+#include &ltiomanip&gt
+#include &ltiostream&gt
+#include &ltctime&gt
+#include "../Tokenizer/Tokenizer.h"
+#include "../NoSqlDb1/NoSqlDb1.h"
+#include "../TypeTable/TypeTable.h"
+#include "../Utilities/Utilities.h"
+#include "../DependencyAnalysis/DependencyAnalysis.h"
+
+using Key = std::string;
+using Keys = std::vector&ltstd::string&gt;
+using File = std::string;
+using Files = std::vector&ltFile&gt;
+using Pattern = std::string;
+using Ext = std::string;
+using FileMap = std::unordered_map&ltPattern, Files&gt;
+
+using Helper = Utilities::StringHelper;
+using namespace Utilities;
+
+
+//&lt----------------------------------------------------Demonstraion of TestStub--------------------------------------------------------&gt
+#ifdef TEST_DEPANAL
+	int main(int argc, char* argv[])
+	<button onclick = "myFunc1()"1
+>+</button><div id = "mydiv1">{
+		title("Testing Dependency class");
+		Depenedency doc; std::vector&ltstd::string&gt token_;
+		token_ = doc.parse(argv[1], true);
+		doc.maketree(token_);
+		std::cout &lt&lt "  " &lt&lt doc.returnDocelem()-&gttoString();
+		std::cout &lt&lt "\n\n";
+		return 1;
+}</div><br><script>function myFunc1() {var x = document.getElementById('mydiv1');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+
+#endif
+</pre>
+</body>
+</html>

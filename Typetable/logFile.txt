@@ -1,0 +1,37 @@
+
+                                             CodeAnalysis
+    ==============================================================================================
+     Thu Apr  6 20:15:33 2017
+     Path: "C:\Users\TriveniAshok\Desktop\CodePublisher\Typetable"
+     Args: *.h, *.cpp, Typetable.vcxproj, /m, /r, /f
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1      44      22
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+               Typetable.h   namespace                       CodeAnalysis      70      90      19
+               Typetable.h       class                           TypeAnal      72      14      15
+               Typetable.h    function                           TypeAnal      91       2       2
+               Typetable.h      lambda                                 []      91       1       1
+               Typetable.h    function                                DFS     111      27      10
+               Typetable.h    function                         doTypeAnal     140      19       2
+               Typetable.h    function                          doDisplay      96      13       3
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+             Typetable.cpp    function                               main      29      15       2
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched     4 dirs
+   processed     3 files

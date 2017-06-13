@@ -1,0 +1,6 @@
+
+                                             CodeAnalysis
+    ==============================================================================================
+     Tue Apr 11 15:14:12 2017
+     Path: "D:\p3\CodePublisher"
+     Args: *.h, *.cpp, CodeAnalyzerEx.sln, /m, /r, /f

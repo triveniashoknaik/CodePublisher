@@ -1,0 +1,22 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Tue Mar 14 19:46:40 2017
+     Path: "C:\Users\TriveniAshok\Desktop\Code\TestFiles"
+     Args: *.h, *.cpp, /f, /r
+                                                                               
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+              public data: Test1.h : 22 - struct test1
+                int a ; 
+              public data: Test1.h : 23 - struct test1
+                float b ; 
+              public data: Test1.h : 24 - struct test1
+                double c ; 
+
+
+    searched     4 dirs
+   processed     3 files

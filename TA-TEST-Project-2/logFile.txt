@@ -1,0 +1,22 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Thu Apr  6 20:49:38 2017
+     Path: "C:\Users\TriveniAshok\Desktop\CodePublisher\TA-TEST-Project-2"
+     Args: *.h, *.cpp, /f, /r, *.h, *.cpp, /f, /r
+                                                                               
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+              public data: Grandparent.h : 10 - namespace Global Namespace
+                typedef std :: string str ; 
+              public data: Child.h : 16 - struct element
+                std :: vector < element > children ; 
+              public data: Child.h : 16 - struct element
+                std :: vector < element > children ; 
+
+
+    searched     3 dirs
+   processed    16 files

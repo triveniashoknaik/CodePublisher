@@ -1,0 +1,198 @@
+<html>
+<head>
+<script src="javascript.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+ <body><h3>CodePublisher</h3>
+<hr/>
+<div class = "indent">
+<h4>Dependencies:</h4> 
+<pre><br><a href = "CodePublisher.h.htm">CodePublisher.h ==> CodePublisher.h.htm</a><br><br><a href = "DependencyAnalysis.h.htm">DependencyAnalysis.h ==> DependencyAnalysis.h.htm</a><br><br><a href = "NoSqlDb1.h.htm">NoSqlDb1.h ==> NoSqlDb1.h.htm</a><br><br><br><br>#pragma once
+#pragma warning( disable : 4129)
+
+/////////////////////////////////////////////////////////////////////////////////
+// DependencyAnalysis.h - Demonstrate how to start developing dependency analyzer//
+//                                                                             //
+// ver 2.0                                                                     //
+// -----------------------------------------------------------------------     //
+// copyright © Triveni Ashok Naik, 2017                                        //
+// Source: Jim Fawcett, CSE687 - Object Oriented Design, Spring 2017           //
+// -----------------------------------------------------------------------     //
+// Language:    Visual C++, Visual Studio 2015                                 //
+// Platform:    Lenovo Y40, Core i7, Windows 8.1 SP1                           //
+// Application: Spring Project,CSE 687,2017                                    //
+// Author:      Triveni Ashok Naik, Syracuse University                        //
+//              SUID: 406461644, trnaik@syr.edu                                //
+/////////////////////////////////////////////////////////////////////////////////
+
+//Package Operation
+/*This package demonstrates how an dependency analyzer works.This package is responsible for getting all the files and hence noting the
+dependency of each file on another.Basically this file actually demonstrates how an dependency analyzer works.It actually shows how
+one file is dependent on another.The basic knowledge of how this is obtained  is to get all the tokens from the tokenizer and hence
+match those tokens with the typename in the typetable. If the match is found then it takes the files that it is dependent on. This dependency
+analyzer also shows all the hiddenfiles that it is dependent on. This is again a very important package as it is involved in finding
+the dependencies of each file in the package.
+*/
+
+//Function Prolouges
+/* show() -&gt shows all the files that it is dependent on.
+count()   -&gt counts the no of files that are present
+save()    -&gt saves all the files in the database.
+value()   -&gt shows the multiple files that are present here.
+keys()    -&gt find all the typenames that are present here.
+Public Interface :
+== == == == == == == == =
+Dependency Class &gt ---- &gt
+
+Build Process :
+== == == == == == ==
+Required files
+- Typetable.h
+- NoSqlDb.h
+- Tokenizer.h
+Build commands
+- devenv Project2_OOD.sln
+- cl / EHsc / DTEST_TOKENIZER tokenizer.cpp / link setargv.obj
+
+Maintenance History :
+== == == == == == == == == ==
+ver 2.0 : 11 Mar 17
+- second release
+---------------------------- -
+ver 1.0 :
+-first release
+------------------------------
+== == == == == == == == == == */
+
+#include &ltunordered_map&gt
+#include &ltstring&gt
+#include &ltsstream&gt
+#include &ltvector&gt
+#include &ltiomanip&gt
+#include &ltiostream&gt
+#include &ltctime&gt
+#include"../CodePublisher/CodePublisher.h"
+#include "../Tokenizer/Tokenizer.h"
+#include "../NoSqlDb1/NoSqlDb1.h"
+#include "../TypeTable/TypeTable.h"
+#include "../Utilities/Utilities.h"
+//#include"../CodePublisher/CodePublisher.h"
+//&lt--------------------------------------Description of class and how dependency works----------------------------------&gt
+
+//namespace CodeAnalysis
+//<button onclick = "myFunc1()"1
+>+</button><div id = "mydiv1">{
+	
+	class workdo
+	<button onclick = "myFunc1()"1
+>+</button><div id = "mydiv1">{
+	public:
+		Dependency taskDo(typeanalysis& db1, Dependency &db, Files allfiles);
+	}</div><br><script>function myFunc1() {var x = document.getElementById('mydiv1');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>;
+
+	Dependency workdo::taskDo(typeanalysis& db1, Dependency &db, Files allfiles)
+	<button onclick = "myFunc2()"2
+>+</button><div id = "mydiv2">{
+		using databasetable = std::map&ltstd::string, std::vector&ltstd::map&ltstd::string, std::string&gt&gt&gt;
+		Keys keystype;
+		std::unordered_map&ltKey, Key&gt temp;
+		for (auto kv : db1)              //To push all the contents of an unordered map to a database
+		<button onclick = "myFunc2()"2
+>+</button><div id = "mydiv2">{
+			keystype.push_back(kv.first);
+			for (auto x : kv.second)
+			<button onclick = "myFunc2()"2
+>+</button><div id = "mydiv2">{
+				for (auto y : x)
+				<button onclick = "myFunc2()"2
+>+</button><div id = "mydiv2">{
+					temp[y.first] = y.second;
+				}</div><br><script>function myFunc2() {var x = document.getElementById('mydiv2');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+			}</div><br><script>function myFunc3() {var x = document.getElementById('mydiv3');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+		}</div><br><script>function myFunc4() {var x = document.getElementById('mydiv4');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+		//&lt-----------------------------------------Function to all the files to get and match it with the tokens----------------&gt
+		ElementItem elemitem;
+		CodePublisher p;
+
+		for (File f : allfiles)
+		<button onclick = "myFunc5()"5
+>+</button><div id = "mydiv5">{
+			try
+			<button onclick = "myFunc5()"5
+>+</button><div id = "mydiv5">{
+				std::string file = FileSystem::Path::getName(f);  //to get all the files from the filesystem
+				std::ifstream in(f);
+				if (!in.good())
+				<button onclick = "myFunc5()"5
+>+</button><div id = "mydiv5">{
+					std::cout &lt&lt "\n  can't open " &lt&lt file &lt&lt "\n\n";
+				}</div><br><script>function myFunc5() {var x = document.getElementById('mydiv5');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+				Scanner::Toker toker; toker.returnComments(false); toker.attach(&in);
+				do
+				<button onclick = "myFunc6()"6
+>+</button><div id = "mydiv6">{
+					std::string tok = toker.getTok();   //gets all the tokens and matches with the typename
+					for (std::string key : keystype)
+					<button onclick = "myFunc6()"6
+>+</button><div id = "mydiv6">{
+						if (key == tok)
+						<button onclick = "myFunc6()"6
+>+</button><div id = "mydiv6">{
+							std::vector&ltstd::map&ltstd::string, std::string&gt&gt vec = db1[key];
+
+							//&lt-------------------------Function to get all the files and hence store it in an vector------------------------------------&gt
+							for (std::map&ltstd::string, std::string&gt cv : vec)
+							<button onclick = "myFunc6()"6
+>+</button><div id = "mydiv6">{
+								for (auto g : cv)
+								<button onclick = "myFunc6()"6
+>+</button><div id = "mydiv6">{
+									if (g.first == "file")
+									<button onclick = "myFunc6()"6
+>+</button><div id = "mydiv6">{
+										elemitem.childrenList.push_back(g.second);
+										std::sort(elemitem.childrenList.begin(), elemitem.childrenList.end());
+										elemitem.childrenList.erase(std::unique(elemitem.childrenList.begin(), elemitem.childrenList.end()), elemitem.childrenList.end());
+										db.save(file, elemitem);
+
+										//CodeAnalysis::
+										//CodePublisher pa;
+
+									//	p.showhomepage("../Htmlfiles\MyHtmlfiles.html");
+
+									  p.codepublish(f, elemitem);
+									}</div><br><script>function myFunc6() {var x = document.getElementById('mydiv6');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+								}</div><br><script>function myFunc7() {var x = document.getElementById('mydiv7');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+							}</div><br><script>function myFunc8() {var x = document.getElementById('mydiv8');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+						}</div><br><script>function myFunc9() {var x = document.getElementById('mydiv9');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+					}</div><br><script>function myFunc10() {var x = document.getElementById('mydiv10');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+				}</div><br><script>function myFunc11() {var x = document.getElementById('mydiv11');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script> while (in.good());
+
+
+
+				//ElementItem e1 = db.value(f);
+			
+
+
+	//			std::string namenew = FileSystem::Path::getName(f);
+		//		for (ElementItem e : db.value(namenew))
+  			//	p.codepublish(f, e);
+//*/  
+            	//std::string namenew = FileSystem::Path::getName(f);
+				//for (ElementItem w : db.value(namenew))
+					//p.codepublish(f, db.value(f));
+			}</div><br><script>function myFunc12() {var x = document.getElementById('mydiv12');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+			//&lt------------------------------------------catch statements to handle exceptions----------------------------------------------------------&gt
+			catch (std::logic_error& ex)
+			<button onclick = "myFunc13()"13
+>+</button><div id = "mydiv13">{
+				std::cout &lt&lt "\n hello  dependency"; std::cout &lt&lt "\n  " &lt&lt ex.what();
+			}</div><br><script>function myFunc13() {var x = document.getElementById('mydiv13');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+		}</div><br><script>function myFunc14() {var x = document.getElementById('mydiv14');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+		return db;
+	}</div><br><script>function myFunc15() {var x = document.getElementById('mydiv15');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+//}</div><br><script>function myFunc16() {var x = document.getElementById('mydiv16');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+
+</pre>
+</body>
+</html>

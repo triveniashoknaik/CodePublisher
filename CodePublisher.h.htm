@@ -1,0 +1,235 @@
+<html>
+<head>
+<script src="javascript.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+ <body><h3>CodePublisher</h3>
+<hr/>
+<div class = "indent">
+<h4>Dependencies:</h4> 
+<pre><br><a href = "CodePublisher.h.htm">CodePublisher.h ==> CodePublisher.h.htm</a><br><br><a href = "NoSqlDb1.h.htm">NoSqlDb1.h ==> NoSqlDb1.h.htm</a><br><br><br><br>/////////////////////////////////////////////////////////////////////////////////
+// CodePublisher.h - Demonstrates the usage of the code in the web browser     //
+//                                                                             //
+// ver 1.0                                                                     //
+// -----------------------------------------------------------------------     //
+// copyright © Triveni Ashok Naik, 2017                                        //
+// Object Oriented Design, Spring 2017                                         //
+// -----------------------------------------------------------------------     //
+// Language:    Visual C++, Visual Studio 2015                                 //
+// Platform:    Lenovo Y40, Core i7, Windows 8.1 SP1                           //
+// Application: Spring Project,CSE 687,2017                                    //
+// Author:      Triveni Ashok Naik, Syracuse University                        //
+//              SUID: 406461644, trnaik@syr.edu                                //
+/////////////////////////////////////////////////////////////////////////////////
+
+//Package Operation
+/* This package is mainly about generating web pages using C++. This package is responsible for getting all
+the dependencies from Dependency.h package.Once the dependency is obtained for a particular file, then it will
+be very helpful for generating links for the files that are dependent on in the browser.This package is mainly 
+responsible for this property. The other one thing that is being done here is that generating of web pages. Also 
+the property of collapsing is also used here. This is done using the javascript and the CSS properties.
+The collapsing is seen to be active for all the class bodies,global functions and the methods.
+*/
+
+//Function Prolouges
+/*codepublish() =&gt Helps in generating web pages with the dependency links shown.
+  showhomepage() =&gt This homepage is helpful in genearting a home webpage with the file links displayed.
+*/
+
+/*Public Interface :
+== == == == == == == == =
+CodePublisher Class &gt ---- &gt
+
+Build Process :
+== == == == == == ==
+Required files
+- NoSqlDb.h
+- Tokenizer.h
+- Utilties.h
+
+Build commands
+- devenv Project3_OOD.sln
+- cl / EHsc / DTEST_TOKENIZER tokenizer.cpp / link setargv.obj
+
+Maintenance History :
+== == == == == == == == == ==
+ver 1.0 :
+-first release - 4/5/2017
+------------------------------
+== == == == == == == == == == */
+
+
+#include&ltiostream&gt
+#include&ltstdlib.h&gt
+#include&ltvector&gt
+#include&ltstring&gt
+#include&ltfstream&gt
+#include&ltsstream&gt
+#include &ltiomanip&gt
+#include "../NoSqlDb1/NoSqlDb1.h"
+#include "../Tokenizer/Tokenizer.h"
+#include "../Utilities/Utilities.h"
+#include "../Typetable/Typetable.h"
+
+using File = std::string;
+using Files = std::vector&ltFile&gt;
+using namespace CodeAnalysis;
+
+//&lt---------------------------------------------------
+namespace CodeAnalysis
+<button onclick = "myFunc1()"1
+>+</button><div id = "mydiv1">{
+	class CodePublisher
+	<button onclick = "myFunc1()"1
+>+</button><div id = "mydiv1">{
+		//private:
+			//std::string PrepareHeading(std::string& filepath);
+
+	public:
+		void codepublish(File file, ElementItem elem);
+		void showhomepage(std::string k);
+
+	}</div><br><script>function myFunc1() {var x = document.getElementById('mydiv1');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>;
+
+	void CodePublisher::codepublish(File filenew, ElementItem elem)
+	<button onclick = "myFunc2()"2
+>+</button><div id = "mydiv2">{
+		std::string path = FileSystem::Path::getPath(filenew);
+		std::string file = FileSystem::Path::getName(filenew);
+
+		File newfile = file + ".htm";
+		std::ofstream out(newfile);
+        std::ifstream in(filenew);
+		if (!in.is_open())
+		<button onclick = "myFunc2()"2
+>+</button><div id = "mydiv2">{
+			std::cout &lt&lt "cant open";
+		}</div><br><script>function myFunc2() {var x = document.getElementById('mydiv2');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+		else
+		<button onclick = "myFunc3()"3
+>+</button><div id = "mydiv3">{
+			out &lt&lt "&lthtml&gt\n&lthead&gt\n&ltscript src=\"javascript.js\"&gt&lt/script&gt\n&ltlink rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"&gt\n&lt/head&gt\n &ltbody&gt";
+			out &lt&lt "&lth3&gtDependency&lt/h3&gt\n&lthr/&gt\n&ltdiv class = \"indent\"&gt\n&lth4&gtDependencies:&lt/h4&gt \n";
+			char c;
+			out &lt&lt "&ltpre&gt";
+			out &lt&lt "&ltbr&gt";
+
+			for (File fname : elem.childrenList)
+			<button onclick = "myFunc3()"3
+>+</button><div id = "mydiv3">{
+				std::string semipath = FileSystem::Path::getPath(fname);
+				std::string name = FileSystem::Path::getName(fname);
+                std::string fpath = name + ".htm";
+
+				out &lt&lt "&lta href = \""; 
+				out &lt&lt fpath;
+				out &lt&lt "\""; 
+				out &lt&lt "&gt";
+				out &lt&lt name; 
+				out &lt&lt " ==&gt "; 
+				out &lt&lt fpath;
+				out &lt&lt "&lt/a&gt";
+
+				out &lt&lt "&ltbr&gt"; out &lt&lt "&ltbr&gt";
+
+			}</div><br><script>function myFunc3() {var x = document.getElementById('mydiv3');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+
+			out &lt&lt "&ltbr&gt"; out &lt&lt "&ltbr&gt";
+			int count = 1;
+			while (in.get(c))
+			<button onclick = "myFunc4()"4
+>+</button><div id = "mydiv4">{
+				if (in.eof())
+					break;
+				else  if (c == '&lt')
+					out &lt&lt "&lt";
+				else if (c == '&gt')
+					out &lt&lt "&gt";
+				else if (c == '}</div><br><script>function myFunc4() {var x = document.getElementById('mydiv4');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>')
+				<button onclick = "myFunc5()"5
+>+</button><div id = "mydiv5">{
+					out &lt&lt "}</div><br><script>function myFunc5() {var x = document.getElementById('mydiv5');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>";
+				//	out &lt&lt "&ltbutton onclick = \"myFunc" &lt&lt count &lt&lt "()\"" &lt&lt count &lt&lt "&gt+&lt/button&gt";
+			
+					out &lt&lt "&lt/div&gt&ltbr&gt&ltscript&gtfunction myFunc" &lt&lt count &lt&lt "() <button onclick = "myFunc6()"6
+>+</button><div id = "mydiv6">{var x = document.getElementById('mydiv" &lt&lt count &lt&lt "');";
+					out &lt&lt "if(x.style.display == 'none') <button onclick = "myFunc6()"6
+>+</button><div id = "mydiv6">{x.style.display = 'block';}</div><br><script>function myFunc6() {var x = document.getElementById('mydiv6');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>";
+					out &lt&lt "else <button onclick = "myFunc7()"7
+>+</button><div id = "mydiv7">{x.style.display = 'none';}</div><br><script>function myFunc7() {var x = document.getElementById('mydiv7');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>}</div><br><script>function myFunc8() {var x = document.getElementById('mydiv8');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script> &lt/script&gt";
+					count++;
+				}</div><br><script>function myFunc9() {var x = document.getElementById('mydiv9');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+				else if (c == '<button onclick = "myFunc10()"10
+>+</button><div id = "mydiv10">{')
+				<button onclick = "myFunc10()"10
+>+</button><div id = "mydiv10">{
+					out &lt&lt "&ltbutton onclick = \"myFunc"&lt&lt count&lt&lt"()\""&lt&ltcount&lt&lt"\n""&gt+&lt/button&gt";
+						out &lt&lt "&ltdiv id = \"mydiv" &lt&lt count &lt&lt "\"&gt";
+					out &lt&lt "<button onclick = "myFunc10()"10
+>+</button><div id = "mydiv10">{";
+				}</div><br><script>function myFunc10() {var x = document.getElementById('mydiv10');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+
+				else
+					out &lt&lt c;
+			}</div><br><script>function myFunc11() {var x = document.getElementById('mydiv11');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+			out &lt&lt "\n&lt/pre&gt\n&lt/body&gt\n&lt/html&gt";
+
+			//out &lt&lt "/pre";
+			//std::string k;
+			in.close();
+			out.close();
+			/*std::string homeLink = k + " ";
+			std::wstring wHomwLink = std::wstring(homeLink.begin(), homeLink.end());
+			LPCWSTR sw = wHomwLink.c_str();
+			ShellExecute(0, 0, sw, 0, 0, SW_SHOW);*/
+
+		}</div><br><script>function myFunc12() {var x = document.getElementById('mydiv12');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+		return;
+	}</div><br><script>function myFunc13() {var x = document.getElementById('mydiv13');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+
+	void CodePublisher::showhomepage(std::string k)
+	<button onclick = "myFunc14()"14
+>+</button><div id = "mydiv14">{   
+		//std::ostringstream oss;
+		std::ofstream as(k + " ");
+		std::stringstream st;
+		//FileMap fileMap = exec.getFileMap();
+		//Files allfiles;
+		//st &lt&lt allfiles;
+		
+		st &lt&lt "&lthtml&gt\n&lthead&gt\n&ltscript src=\"javascript.js\"&gt&lt/script&gt\n&ltlink rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"&gt\n&lt/head&gt\n &ltbody&gt";
+		st &lt&lt "&lth3&gtCodePublisher&lt/h3&gt\n&lthr/&gt\n&ltdiv class = \"indent\"&gt\n&lth4&gtHOMEPAGE:&lt/h4&gt \n";
+
+		std::string currentD = FileSystem::Directory::getCurrentDirectory();
+		Files files = FileSystem::Directory::getFiles(currentD, "*.htm");
+
+		st &lt&lt "&ltol&gt";
+		for each (auto file in files)
+		<button onclick = "myFunc14()"14
+>+</button><div id = "mydiv14">{
+			if (file != "MyHtmlfiles.html")
+			<button onclick = "myFunc14()"14
+>+</button><div id = "mydiv14">{
+				st &lt&lt "&ltli&gt";
+				std::string dcdc = FileSystem::Path::getPath(file);
+				std::string sq = currentD + "\\" + file;
+
+				st &lt&lt "&lta href = \"" + sq + "\"&gt" + file + "&lt/a&gt";
+				st &lt&lt "&lt/li&gt";
+			}</div><br><script>function myFunc14() {var x = document.getElementById('mydiv14');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+		}</div><br><script>function myFunc15() {var x = document.getElementById('mydiv15');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+		st &lt&lt "&lt/ol&gt";
+		st &lt&lt "&lt/body&gt&lt/html&gt";
+		as &lt&lt st.str();
+		as.close();
+
+		std::string homeLink = FileSystem::Directory::getCurrentDirectory() + "\\" + "MyHtmlfiles.html";
+		std::wstring wHomwLink = std::wstring(homeLink.begin(), homeLink.end());
+		LPCWSTR sw = wHomwLink.c_str();
+		ShellExecute(0, 0, sw, 0, 0, SW_SHOW);
+	}</div><br><script>function myFunc16() {var x = document.getElementById('mydiv16');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+}</div><br><script>function myFunc17() {var x = document.getElementById('mydiv17');if(x.style.display == 'none') {x.style.display = 'block';}else {x.style.display = 'none';}} </script>
+
+</pre>
+</body>
+</html>

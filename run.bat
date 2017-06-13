@@ -1,0 +1,1 @@
+.\x64\Debug\CodeAnalyzer.exe Requirement-9 *.h *.cpp  /f /r

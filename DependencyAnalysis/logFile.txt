@@ -1,0 +1,33 @@
+
+                                             CodeAnalysis
+    ==============================================================================================
+     Thu Apr  6 20:13:17 2017
+     Path: "C:\Users\TriveniAshok\Desktop\CodePublisher\DependencyAnalysis"
+     Args: *.h, *.cpp, DependencyAnalysis.vcxproj, /m, /r, /f
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1      17
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+      DependencyAnalysis.h       class                             workdo      70       3      15
+      DependencyAnalysis.h    function                             taskDo      73      25      14
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+    DependencyAnalysis.cpp      lambda                                [])      44       9       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+      DependencyAnalysis.h    function                             taskDo      73      25      14
+
+
+
+    searched     4 dirs
+   processed     3 files
